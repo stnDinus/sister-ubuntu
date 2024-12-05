@@ -6,3 +6,12 @@ services:
     build: .
     stdin_open: true
     tty: true
+    networks:
+      sister-ubuntu-network:
+        ipv4_address: 172.20.0.2
+
+networks:
+  sister-ubuntu-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
