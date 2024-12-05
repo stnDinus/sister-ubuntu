@@ -4,6 +4,9 @@ FROM ubuntu:24.04
 RUN apt-get update
 RUN apt-get install -y openssh-server
 
+# service management
+RUN service ssh start
+
 # group management
 ## mahasiswa
 RUN groupadd mhs
