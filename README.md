@@ -4,5 +4,5 @@
 2. Run
 
 ```sh
-docker compose run --rm sister-ubuntu-service
+docker compose run --rm --build sister-ubuntu-service
 ```
