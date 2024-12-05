@@ -16,10 +16,14 @@ RUN groupadd dsn
 # user management
 RUN useradd -D -s /bin/bash
 RUN useradd \
+  -b /home/mhs \
+  -m \
   -g mhs \
   -p '$y$j9T$ZuAJHa.7qWNMApki8uOjK0$wnmZbVLESvKjJEiRh65u3TzUFndvmdv2WUDM4ISIMp1' \
   steven
 RUN useradd \
+  -b /home/mhs \
+  -m \
   -g mhs \
   -p '$y$j9T$rc884nmCaiRMSiT8PRUuq.$eH50th3g5meXOVwv4PD3xHSREIzkJfCinvcue2kJ0f3' \
   ivan
