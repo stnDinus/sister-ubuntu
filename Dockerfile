@@ -4,9 +4,6 @@ FROM ubuntu:24.04
 RUN apt-get update
 RUN apt-get install -y openssh-server iproute2
 
-# service management
-RUN service ssh start
-
 # group management
 ## mahasiswa
 RUN groupadd mhs
@@ -27,3 +24,5 @@ RUN useradd \
   -g mhs \
   -p '$y$j9T$rc884nmCaiRMSiT8PRUuq.$eH50th3g5meXOVwv4PD3xHSREIzkJfCinvcue2kJ0f3' \
   ivan
+
+CMD service ssh start && bash
