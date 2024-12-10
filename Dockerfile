@@ -31,4 +31,8 @@ RUN useradd \
   -p '$y$j9T$rc884nmCaiRMSiT8PRUuq.$eH50th3g5meXOVwv4PD3xHSREIzkJfCinvcue2kJ0f3' \
   salam
 
-CMD service ssh start && bash
+# sshd management
+COPY sshd_config_v1 /etc/ssh/sshd_config
+
+CMD service ssh start \
+  && bash
