@@ -8,12 +8,14 @@ services:
     tty: true
     cap_add:
       - NET_ADMIN
+    environment:
+      GUEST_IP: ${GUEST_IP:-192.168.2.31}
     networks:
       sister-ubuntu-network:
-        ipv4_address: 172.20.0.2
+        ipv4_address: ${GUEST_IP:-192.168.2.31}
 
 networks:
   sister-ubuntu-network:
     ipam:
       config:
-        - subnet: 172.20.0.0/16
+        - subnet: ${SUBNET:-192.168.2.0/25}
