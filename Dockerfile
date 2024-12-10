@@ -4,6 +4,7 @@ FROM ubuntu:24.04
 RUN apt-get update
 RUN apt-get install -y openssh-server iproute2
 RUN apt-get install -y ufw
+RUN apt-get install -y net-tools
 
 # group management
 ## mahasiswa
