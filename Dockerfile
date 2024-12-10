@@ -24,5 +24,11 @@ RUN useradd \
   -g mhs \
   -p '$y$j9T$rc884nmCaiRMSiT8PRUuq.$eH50th3g5meXOVwv4PD3xHSREIzkJfCinvcue2kJ0f3' \
   ivan
+RUN useradd \
+  -b /home/dsn \
+  -m \
+  -g dsn \
+  -p '$y$j9T$rc884nmCaiRMSiT8PRUuq.$eH50th3g5meXOVwv4PD3xHSREIzkJfCinvcue2kJ0f3' \
+  salam
 
 CMD service ssh start && bash
