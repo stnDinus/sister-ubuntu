@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 # package management
 RUN apt-get update
 RUN apt-get install -y openssh-server iproute2
+RUN apt-get install -y ufw
 
 # group management
 ## mahasiswa
@@ -35,4 +36,6 @@ RUN useradd \
 COPY sshd_config_v1 /etc/ssh/sshd_config
 
 CMD service ssh start \
+  && ufw enable \
+  && ufw allow from ${HOST_IP} to ${GUEST_IP} port 8022 \
   && bash
