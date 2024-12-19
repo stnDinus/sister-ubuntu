@@ -3,6 +3,7 @@
 services:
   sister-ubuntu-service:
     hostname: sister-ubuntu
+    container_name: sister-ubuntu
     build: .
     stdin_open: true
     tty: true
