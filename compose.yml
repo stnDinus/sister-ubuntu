@@ -9,8 +9,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      HOST_IP: ${HOST_IP:-192.168.2.1}
       GUEST_IP: ${GUEST_IP:-192.168.2.31}
+      SSH_IP: ${SSH_IP:-192.168.2.2}
     networks:
       sister-ubuntu-network:
         ipv4_address: ${GUEST_IP:-192.168.2.31}

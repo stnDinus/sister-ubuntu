@@ -38,5 +38,5 @@ COPY sshd_config_v1 /etc/ssh/sshd_config
 
 CMD service ssh start \
   && ufw enable \
-  && ufw allow from ${HOST_IP} to ${GUEST_IP} port 8022 \
+  && ufw allow from ${SSH_IP} to ${GUEST_IP} port 8022 \
   && bash
