@@ -15,7 +15,9 @@ services:
       sister-ubuntu-network:
         ipv4_address: ${GUEST_IP:-192.168.2.31}
   sister-ssh-service:
-    image: ubuntu
+    hostname: sister-ssh
+    build:
+      dockerfile: ssh.Dockerfile
     stdin_open: true
     tty: true
     environment:
