@@ -14,6 +14,15 @@ services:
     networks:
       sister-ubuntu-network:
         ipv4_address: ${GUEST_IP:-192.168.2.31}
+  sister-ssh-service:
+    image: ubuntu
+    stdin_open: true
+    tty: true
+    environment:
+      SSH_IP: ${SSH_IP:-192.168.2.2}
+    networks:
+      sister-ubuntu-network:
+        ipv4_address: ${SSH_IP:-192.168.2.2}
 
 networks:
   sister-ubuntu-network:
