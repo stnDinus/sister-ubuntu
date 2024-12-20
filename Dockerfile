@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get install -y openssh-server iproute2
 RUN apt-get install -y ufw
 RUN apt-get install -y net-tools
+RUN apt-get install -y nginx
 
 # group management
 ## mahasiswa
@@ -36,9 +37,14 @@ RUN useradd \
 # sshd management
 COPY sshd_config_v1 /etc/ssh/sshd_config
 
+# nginx management
+COPY nginx.conf /etc/nginx/nginx.conf
+
 EXPOSE 8022
 
 CMD service ssh start \
+  && service nginx start \
   && ufw enable \
   && ufw allow from ${SSH_IP} to ${GUEST_IP} port 8022 \
+  && ufw allow 80 \
   && bash
